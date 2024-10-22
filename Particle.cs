@@ -65,6 +65,7 @@ namespace StarForged.Content.Effects.Particles {
 
         // Default Draw code, simply override for Custom Drawing
         public virtual void Draw(SpriteBatch spriteBatch) {
+            opacity = (opacity < 0) ? 0 : (opacity > 1) ? 1 : opacity;
             spriteBatch.Draw(sprite, position - Main.screenPosition, frame, color * opacity, rotation, sprite.Size() * 0.5f, scale, SpriteEffects.None, 0f);
         }
 
